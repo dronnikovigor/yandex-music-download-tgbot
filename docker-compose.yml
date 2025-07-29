@@ -1,17 +1,10 @@
-version: '3.8'
-
 services:
   yandex-music-bot:
-    build: .
-    container_name: yandex-music-bot
+    image: yandex-music-download-tgbot:v1.0.0
+    container_name: yandex-music-download-tgbot
     restart: unless-stopped
-    environment:
-      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
-      - YANDEX_MUSIC_TOKEN=${YANDEX_MUSIC_TOKEN}
     volumes:
       - downloads:/app/downloads
-      - temp:/app/temp
 
 volumes:
   downloads:
-  temp:
