@@ -5,6 +5,11 @@ services:
     restart: unless-stopped
     volumes:
       - downloads:/app/downloads
+    user: "${UID}:${GID}"
+    environment:
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+      - YANDEX_MUSIC_TOKEN=${YANDEX_MUSIC_TOKEN}
+      - ALLOWED_USER_IDS=${ALLOWED_USER_IDS}
 
 volumes:
   downloads:
