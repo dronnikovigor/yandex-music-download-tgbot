@@ -1,6 +1,6 @@
 services:
   yandex-music-bot:
-    image: yandex-music-download-tgbot:v1.0.0
+    image: yandex-music-download-tgbot:v1.0.1
     container_name: yandex-music-download-tgbot
     restart: unless-stopped
     volumes:
