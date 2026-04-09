@@ -147,7 +147,13 @@ class YandexMusicBot:
 
 
     def run(self):
-        application = Application.builder().token(self.config.TELEGRAM_TOKEN).build()
+        application = Application.builder()
+            .token(self.config.TELEGRAM_TOKEN)
+            .read_timeout(120)
+            .write_timeout(120)
+            .connect_timeout(120)
+            .pool_timeout(120)
+            .build()
 
         application.add_handler(CommandHandler("start", self.start))
         application.add_handler(CommandHandler("help", self.help_command))
